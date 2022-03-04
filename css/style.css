@@ -9,7 +9,10 @@ header {
     justify-content: center;
     flex-direction: column;
 }
-
+#logo{
+    width: 475px;
+    align-self: center;
+}
 .nav_links {
     display: flex;
     text-align: center;
@@ -33,7 +36,8 @@ header {
     flex-basis: 450px;
 }
 
-.card h4 {
+.card h4,
+.card h3 {
     text-align: center;
 }
 
@@ -41,33 +45,55 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
-
+.gallery{
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .gallery img {
     width: 300px;
     border: #50C7C7 solid 10px;
     margin: 10px;
+    
 }
 
 #logo {
     position: relative;
-  animation: logo 5s infinite;
-    @keyframes logo {
-    from {top: 0px;}
-    to {top: 200px;}
-  }
-}
+    animation: logo 5s;
 
+}
+@keyframes logo {
+    from {
+        width: 25px;
+        opacity: 0;
+    }
+    to {
+        width: 475px;
+        opacity: 1;
+    }
+  }
 @media screen and (min-width: 900px){
     header {
         display: flex;
-        justify-content: start;
+        flex-direction: row;
+        justify-content: space-between;
     }
+
 
     .nav_links {
         display: flex;
         text-align: right;
+        flex-direction: row;
         flex-wrap: wrap;
+    }
+
+    .pricing {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row;
     }
 }
 
@@ -77,32 +103,27 @@ header {
         background-image: none;
         background-color: #f1f1f1;
     }
-
+   
     .nav_links {
-        justify-content: space-between;
+        justify-content: space-around;
         flex-wrap: wrap;
+        flex-direction: row;
     }
 
     .pricing {
         display: flex;
         align-items: flex-end;
+        flex-direction: row;
     }
 
-    .card > header:first-child {
-        background-color: #288088;
-        border: #45ADAD solid 2px;
-        padding: 20px 0px;
-        border-radius: 50px 50px 0 0;
-        overflow: hidden;
-    }
 
     .card {
         border: #45ADDD solid 2px;
         flex-basis: 325px;
     }
     
-    .card ul::after {
-        content: "U+1F44D";
+    .card li:nth-child(2)::after {
+        content: "\01F44D";
     }
 
     .gallery {
